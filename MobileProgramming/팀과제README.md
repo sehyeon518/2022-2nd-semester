@@ -87,11 +87,24 @@ class EventDecorator(private val color: Int, dates: Collection<CalendarDay
 
 갤러리 버튼 클릭 시 해당 챌린지 기록센터로 이동
 
-뷰 모델(MyViewModel.kt)을 통해 해당하는 챌린지의 challenge name이 기록센터로 전달
+뷰 모델(MyViewModel.kt)을 통해 해당하는 챌린지의 challenge name이 기록센터로 전달\
+뷰 모델은 MutableLiveData를 이용하여 sendMessage와 getMessage 메소드를 통해챌린지의 이름을 주고 받을 수 있음
+
+```kotlin
+val message = MutableLiveData<String>()
+fun sendMessage(text: String) {
+    message.value = text
+}
+fun getMessage(): String? {
+    return message.value
+}
+```
 
 ## Record Fragment - 기록 센터
 
 해당하는 챌린지를 인증한 사진을 Grid View로 불러오는 Fragment
+
+뷰 모델의 getMessage 메소드를 통해 챌린지의 이름을 받아 해당하는 챌린지를 인증한 기록을 불러옴
 
 ### Grid View - 내가 참여중인 챌린지 인증 사진 모음
 
