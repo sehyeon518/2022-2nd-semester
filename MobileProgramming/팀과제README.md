@@ -81,9 +81,25 @@ class EventDecorator(private val color: Int, dates: Collection<CalendarDay
 
 각 챌린지마다 챌린지 대표 사진, 챌린지 이름, 챌린지 만든이, 인증하기 버튼, 갤러리 버튼으로 구성되어 있음
 
-### 1. 인증하기
+### 1. 챌린지 이미지
 
-### 2. 갤러리
+파이어베이스에 저장된 이미지 대표 이미지를 불러옴\
+모든 형식의 이미지를 받아오기 위해 확장자 이름이 담긴 array를 만들어 이미지 다운로드 성공시 image view에 불러옴\
+파이어베이스 이미지 불러오기 실패시 기본으로 설정된 ttc 로고를 불러옴
+```kotlin
+val fileExt = arrayOf(".jpeg", ".jpg", "")
+    for(i in fileExt)
+        storage.getReference().child("UserImages_" + fullName + i).downloadUrl
+        .addOnSuccessListener { uri ->
+            Glide.with(context).load(uri.toString().toUri()).into(holder.ch_image!!)
+        }
+```
+
+### 2. 인증하기
+
+인증하기 버튼 클릭 시 해당 챌린지를 인증하는 Certibox Fragment로 이동함
+
+### 3. 갤러리
 
 갤러리 버튼 클릭 시 해당 챌린지 기록센터로 이동
 
