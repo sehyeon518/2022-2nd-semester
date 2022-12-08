@@ -14,7 +14,7 @@ Navgation bar의 MainPage 메뉴 또는 상단 TTC 로고 클릭 시 보이는 F
 <img src="https://user-images.githubusercontent.com/84698896/205427501-244e8017-3806-4081-ab21-7b8889f7e187.png" width="200">
 <img src="https://user-images.githubusercontent.com/84698896/205428115-f9bf7b13-f1d2-487a-afce-08c62c81f25b.png" width="200">
 
-### 1. 회원 정보 (예: 떡볶이)
+* 회원 정보 (예: 떡볶이)
 
 사용자 프로필: 기본 이미지로 설정\
 사용자 이름: UserProfile 객체의 name
@@ -22,7 +22,7 @@ Navgation bar의 MainPage 메뉴 또는 상단 TTC 로고 클릭 시 보이는 F
     showMyName()
 
 
-### 2. 챌린지 현황 (예: 진행 2, 완료 3, 개설 2)
+*챌린지 현황 (예: 진행 2, 완료 3, 개설 2)
 
     showCount()
 
@@ -30,11 +30,11 @@ Navgation bar의 MainPage 메뉴 또는 상단 TTC 로고 클릭 시 보이는 F
 
 각 text view 클릭 시 진행 중인 챌린지, 완료한 챌린지, 개설한 챌린지 목록을 보여주는 fragment로 이동
 
-### 3. 챌린지 인증센터 이동
+* 챌린지 인증센터 이동
 
 `챌린지 인증하러 가기` 또는 Navigation bar의 Certification 메뉴 클릭 시 Certification Fragment로 이동
 
-### 4. 캘린더뷰 - MaterialCalendarView 라이브러리 사용
+* 캘린더뷰 - MaterialCalendarView 라이브러리 사용
 
     showDate()
     
@@ -68,7 +68,7 @@ class EventDecorator(private val color: Int, dates: Collection<CalendarDay
 }
 ```
 
-### 5. 사용자 관리
+* 사용자 관리
 
 각 뷰 클릭 시 해당 유저 관리 페이지로 이동
 
@@ -81,7 +81,7 @@ class EventDecorator(private val color: Int, dates: Collection<CalendarDay
 
 각 챌린지마다 챌린지 대표 사진, 챌린지 이름, 챌린지 만든이, 인증하기 버튼, 갤러리 버튼으로 구성되어 있음
 
-### 1. 챌린지 이미지
+* 챌린지 이미지
 
 파이어베이스에 저장된 이미지 대표 이미지를 불러옴\
 모든 형식의 이미지를 받아오기 위해 확장자 이름이 담긴 array를 만들어 이미지 다운로드 성공시 image view에 불러옴\
@@ -95,11 +95,11 @@ val fileExt = arrayOf(".jpeg", ".jpg", "")
         }
 ```
 
-### 2. 인증하기
+* 인증하기
 
 인증하기 버튼 클릭 시 해당 챌린지를 인증하는 Certibox Fragment로 이동함
 
-### 3. 갤러리
+* 갤러리
 
 갤러리 버튼 클릭 시 해당 챌린지 기록센터로 이동
 
